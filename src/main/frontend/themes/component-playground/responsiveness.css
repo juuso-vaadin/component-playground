@@ -1,0 +1,19 @@
+.tablet-horizontal-to-vertical {
+    flex-direction: row;
+}
+
+.mobile-show {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .tablet-horizontal-to-vertical {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .mobile-show {
+        display: inline-block;
+    }
+}

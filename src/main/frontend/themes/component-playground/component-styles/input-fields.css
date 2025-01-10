@@ -1,0 +1,10 @@
+html {
+    --vaadin-input-field-background: var(--lumo-base-color);
+    --vaadin-input-field-border-width: 1px;
+    --vaadin-input-field-border-color: var(--lumo-contrast-30pct);
+    --vaadin-input-field-label-color: var(--lumo-body-text-color);
+}
+
+[focused]::part(input-field) {
+    box-shadow: 0 0 0 var(--_focus-ring-width) var(--_focus-ring-color);
+}

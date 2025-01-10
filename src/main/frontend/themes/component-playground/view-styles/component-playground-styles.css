@@ -1,0 +1,200 @@
+html body {
+    background-color: var(--lumo-contrast-5pct);
+}
+
+html[theme~="dark"] body {
+    background-color: var(--lumo-shade-10pct);
+}
+
+/* Main layout header */
+header nav a:any-link {
+    text-decoration: none;
+    padding: 0 var(--lumo-space-s);
+    border-radius: var(--lumo-border-radius-m);
+    outline: 0;
+}
+
+header nav a:hover {
+    color: var(--lumo-header-text-color);
+}
+
+header nav a:active {
+    background-color: var(--lumo-contrast-5pct);
+}
+
+header nav a:focus-visible {
+    box-shadow: 0 0 0 2px var(--lumo-primary-color-50pct);
+}
+
+header nav a.active vaadin-icon {
+    color: var(--lumo-primary-text-color);
+}
+
+header nav a.active {
+    background-color: var(--lumo-primary-color-10pct);
+}
+
+
+/* Components view */
+.components-view {
+    padding: var(--lumo-space-l);
+}
+
+.components-view .card {
+    background: var(--lumo-base-color);
+    padding: var(--lumo-space-l);
+    box-shadow: var(--lumo-box-shadow-xs);
+}
+
+.components-view vaadin-date-time-picker vaadin-date-picker {
+    --vaadin-field-default-width: 10em;
+}
+
+.components-view vaadin-date-time-picker vaadin-time-picker {
+    --vaadin-field-default-width: 6em;
+}
+
+@media screen and (max-width: 1200px) {
+    .components-view .view-content {
+        flex-wrap: wrap;
+    }
+}
+
+/* Hilla view styles */
+.components-view {
+    background: transparent;
+    container-type: inline-size;
+    container-name: kitchen-sink;
+    overflow: auto;
+    height: 100%;
+}
+
+.drawer-toggle {
+    position: fixed;
+    top: var(--lumo-space-s);
+    inset-inline-start: var(--lumo-space-s);
+    z-index: 10;
+}
+
+@media (orientation: landscape) or (min-width: 801px) {
+    .drawer-toggle {
+        display: none;
+    }
+}
+
+.components-view .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-flow: dense;
+    --vaadin-field-default-width: 100%;
+    align-items: stretch;
+    gap: max(1vmax, 1px);
+}
+
+.components-view .component {
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--lumo-box-shadow-xs);
+    border-radius: var(--lumo-border-radius-l);
+    padding: var(--lumo-space-l);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    background: var(--lumo-base-color);
+}
+
+.components-view .grid .tall {
+    height: 100%;
+    min-height: 400px;
+    grid-row: auto / span 2;
+}
+
+@container kitchen-sink (min-width: 400px) {
+    .components-view .grid .wide,
+    .components-view .grid .widest {
+        grid-column: auto / span 2;
+    }
+}
+
+@container kitchen-sink (min-width: 600px) {
+    .components-view .grid .widest {
+        grid-column: auto / span 3;
+    }
+}
+
+.components-view .component.no-padding {
+    padding: 0;
+}
+
+.components-view .component.no-padding vaadin-grid {
+    border-radius: calc(var(--lumo-border-radius-l) + 1px);
+    overflow: hidden;
+}
+
+.components-view vaadin-chart {
+    --vaadin-charts-background: transparent;
+}
+
+.components-view vaadin-date-picker {
+    --vaadin-field-default-width: 8em;
+}
+
+.components-view vaadin-time-picker {
+    --vaadin-field-default-width: 6em;
+}
+
+.component .docs {
+    position: absolute;
+    inset: 0;
+    top: auto;
+    font-size: var(--lumo-font-size-s);
+    font-weight: 600;
+    padding: 0.5em;
+    padding-top: 1.5em;
+    background: linear-gradient(transparent, var(--lumo-base-color) 1em);
+    transform: translateY(100%);
+    transition: transform 150ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.component:hover .docs,
+.component .docs:focus {
+    transform: none;
+    transition-delay: 200ms;
+}
+
+.component .docs:focus {
+    transition: none;
+    outline-color: var(--vaadin-focus-ring-color);
+}
+
+.component .docs vaadin-icon {
+    width: 1em;
+    height: 1em;
+}
+
+.color-scales {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.color-scale {
+    border-radius: var(--lumo-border-radius-m);
+    overflow: hidden;
+    background: var(--lumo-base-color);
+}
+
+.color-scale div {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.color-scale.tint {
+    background-color: var(--lumo-contrast-10pct);
+}

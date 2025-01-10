@@ -22,9 +22,9 @@ export default function MainLayout() {
 
   return (
     <AppLayout>
-      <header className="box-border flex flex-col w-full" slot="navbar">
-        <div className="flex items-center px-l">
-          <h1 className="my-m me-auto text-l">My App</h1>
+      <header className="box-border flex flex-row items-center w-full" slot="navbar">
+        <div className="flex items-center flex-grow px-l">
+          <h1 className="my-m me-auto text-l">Component playground</h1>
         </div>
         <nav className="flex overflow-auto px-m py-xs">
           <ul className="flex gap-s list-none m-0 p-0">
@@ -41,10 +41,6 @@ export default function MainLayout() {
           </ul>
         </nav>
       </header>
-
-      <h1 slot="navbar" className="text-l m-0">
-        {documentTitleSignal}
-      </h1>
 
       <Suspense>
         <Outlet />
