@@ -1,12 +1,15 @@
-vaadin-button:hover {
+vaadin-button:hover,
+vaadin-menu-bar-button:hover {
     --vaadin-button-primary-background: var(--orchid-color-red-700);
 }
 
-html[theme="dark"] vaadin-button:hover {
+html[theme="dark"] vaadin-button:hover,
+html[theme="dark"] vaadin-menu-bar-button:hover {
     --vaadin-button-primary-background: var(--orchid-color-red-700);
 }
 
-html[theme="dark"] vaadin-button {
+html[theme="dark"] vaadin-button,
+html[theme="dark"] vaadin-menu-bar-button {
     --vaadin-button-text-color: var(--orchid-color-red-050);
     --vaadin-button-tertiary-text-color: var(--orchid-color-red-050);
 }
@@ -22,7 +25,8 @@ vaadin-menu-bar-button:not([theme~="tertiary-inline"]):hover {
     --vaadin-button-border: 1px solid var(--lumo-contrast-20pct);
 }
 
-vaadin-button[theme~='icon']:not([theme~='tertiary-inline']) {
+vaadin-button[theme~='icon']:not([theme~='tertiary-inline']),
+vaadin-menu-bar-button[theme~='icon']:not([theme~='tertiary-inline']) {
     padding-left: calc((var(--lumo-button-size) - var(--lumo-icon-size)) / 2);
     padding-right: calc((var(--lumo-button-size) - var(--lumo-icon-size)) / 2);
 }
