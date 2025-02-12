@@ -1,86 +1,165 @@
 @import "theme-editor.css";
-@import url('view-styles/component-playground-styles.css');
+@import "view-styles/component-playground-styles.css";
 
-@import "responsiveness.css";
+@import "orchid-colors.css";
 @import "component-styles/input-fields.css";
+@import "component-styles/buttons.css";
 
 html {
-    /* Base (background) */
-    --lumo-base-color: #fff;
+    --lumo-base-color: var(--orchid-color-white);
 
-    /* Shade */
-    --lumo-shade-5pct: hsla(214, 61%, 25%, 0.05);
-    --lumo-shade-10pct: hsla(214, 57%, 24%, 0.1);
-    --lumo-shade-20pct: hsla(214, 53%, 23%, 0.16);
-    --lumo-shade-30pct: hsla(214, 50%, 22%, 0.26);
-    --lumo-shade-40pct: hsla(214, 47%, 21%, 0.38);
-    --lumo-shade-50pct: hsla(214, 45%, 20%, 0.52);
-    --lumo-shade-60pct: hsla(214, 43%, 19%, 0.6);
-    --lumo-shade-70pct: hsla(214, 42%, 18%, 0.69);
-    --lumo-shade-80pct: hsla(214, 41%, 17%, 0.83);
-    --lumo-shade-90pct: hsla(214, 40%, 16%, 0.94);
-    --lumo-shade: hsl(214, 35%, 15%);
+    /* Text colors */
+    --lumo-heading-text-color: var(--orchid-color-grey-900);
+    --lumo-body-text-color: var(--orchid-color-grey-700);
+    --lumo-secondary-text-color: var(--orchid-color-grey-500);
+    --lumo-tertiary-text-color: var(--orchid-color-grey-400);
+    --lumo-disabled-text-color: var(--orchid-color-grey-300);
 
-    /* Contrast */
-    --lumo-contrast-5pct: var(--lumo-shade-5pct);
-    --lumo-contrast-10pct: var(--lumo-shade-10pct);
-    --lumo-contrast-20pct: var(--lumo-shade-20pct);
-    --lumo-contrast-30pct: var(--lumo-shade-30pct);
-    --lumo-contrast-40pct: var(--lumo-shade-40pct);
-    --lumo-contrast-50pct: var(--lumo-shade-50pct);
-    --lumo-contrast-60pct: var(--lumo-shade-60pct);
-    --lumo-contrast-70pct: var(--lumo-shade-70pct);
-    --lumo-contrast-80pct: var(--lumo-shade-80pct);
-    --lumo-contrast-90pct: var(--lumo-shade-90pct);
-    --lumo-contrast: var(--lumo-shade);
+    /* Shades */
+    --lumo-contrast-5pct: var(--orchid-color-grey-050);
+    --lumo-contrast-10pct: var(--orchid-color-grey-100);
+    --lumo-contrast-20pct: var(--orchid-color-grey-200);
+    --lumo-contrast-30pct: var(--orchid-color-grey-300);
+    --lumo-contrast-40pct: var(--orchid-color-grey-400);
+    --lumo-contrast-50pct: var(--orchid-color-grey-500);
+    --lumo-contrast-60pct: var(--orchid-color-grey-600);
+    --lumo-contrast-70pct: var(--orchid-color-grey-700);
+    --lumo-contrast-80pct: var(--orchid-color-grey-800);
+    --lumo-contrast-90pct: var(--orchid-color-grey-900);
+    --lumo-contrast: var(--orchid-color-black);
 
-    /* Text */
-    --lumo-header-text-color: var(--lumo-contrast);
-    --lumo-body-text-color: var(--lumo-contrast-90pct);
-    --lumo-secondary-text-color: var(--lumo-contrast-70pct);
-    --lumo-tertiary-text-color: var(--lumo-contrast-50pct);
-    --lumo-disabled-text-color: var(--lumo-contrast-30pct);
+    --lumo-shade-5pct: hsla(0 0%, 0%, 0.05);
+    --lumo-shade-10pct: hsla(0 0%, 0%, 0.1);
+    --lumo-shade-20pct: hsla(0 0%, 0%, 0.2);
+    --lumo-shade-30pct: hsla(0 0%, 0%, 0.3);
+    --lumo-shade-40pct: hsla(0 0%, 0%, 0.4);
+    --lumo-shade-50pct: hsla(0 0%, 0%, 0.5);
+    --lumo-shade-60pct: hsla(0 0%, 0%, 0.6);
+    --lumo-shade-70pct: hsla(0 0%, 0%, 0.7);
+    --lumo-shade-80pct: hsla(0 0%, 0%, 0.8);
+    --lumo-shade-90pct: hsla(0 0%, 0%, 0.9);
+    --lumo-shade: hsl(0 0%, 0%);
 
-    /* Primary */
-    --lumo-primary-color: hsl(214, 100%, 48%);
-    --lumo-primary-color-50pct: hsla(214, 100%, 49%, 0.76);
-    --lumo-primary-color-10pct: hsla(214, 100%, 60%, 0.13);
-    --lumo-primary-text-color: hsl(214, 100%, 43%);
-    --lumo-primary-contrast-color: #fff;
+    /* Semantic colors */
+    --lumo-primary-color: var(--orchid-color-red-800);
+    --lumo-primary-color-10pct: var(--orchid-color-red-050);
+    --lumo-primary-color-50pct: var(--orchid-color-red-300);
+    --lumo-primary-contrast-color: var(--orchid-color-white);
+    --lumo-primary-text-color: var(--orchid-color-red-800);
 
-    /* Error */
-    --lumo-error-color: hsl(3, 85%, 48%);
-    --lumo-error-color-50pct: hsla(3, 85%, 49%, 0.5);
-    --lumo-error-color-10pct: hsla(3, 85%, 49%, 0.1);
-    --lumo-error-text-color: hsl(3, 89%, 42%);
-    --lumo-error-contrast-color: #fff;
+    --lumo-success-color: var(--orchid-color-green-500);
+    --lumo-success-color-10pct: var(--orchid-color-green-050);
+    --lumo-success-color-50pct: var(--orchid-color-green-200);
+    --lumo-success-contrast-color: var(--orchid-color-white);
+    --lumo-success-text-color: var(--orchid-color-green-600);
 
-    /* Success */
-    --lumo-success-color: hsl(145, 72%, 30%);
-    --lumo-success-color-50pct: hsla(145, 72%, 31%, 0.5);
-    --lumo-success-color-10pct: hsla(145, 72%, 31%, 0.1);
-    --lumo-success-text-color: hsl(145, 85%, 25%);
-    --lumo-success-contrast-color: #fff;
+    --lumo-error-color: var(--orchid-color-red-500);
+    --lumo-error-color-10pct: var(--orchid-color-red-050);
+    --lumo-error-color-50pct: var(--orchid-color-red-300);
+    --lumo-error-contrast-color: var(--orchid-color-white);
+    --lumo-error-text-color: var(--orchid-color-red-600);
 
-    /* Warning */
-    --lumo-warning-color: hsl(48, 100%, 50%);
-    --lumo-warning-color-10pct: hsla(48, 100%, 50%, 0.25);
-    --lumo-warning-text-color: hsl(32, 100%, 30%);
-    --lumo-warning-contrast-color: var(--lumo-shade-90pct);
+    --lumo-warning-color: var(--orchid-color-yellow-200);
+    --lumo-warning-color-10pct: var(--orchid-color-yellow-050);
+    --lumo-warning-text-color: var(--orchid-color-yellow-600);
+    --lumo-warnng-contrast-color: var(--orchid-color-yellow-800);
+
+    /* User colors */
+    --lumo-user-color-0: var(--orchid-color-red-500);
+    --lumo-user-color-1: var(--orchid-color-purple-500);
+    --lumo-user-color-2: var(--orchid-color-teal-500);
+    --lumo-user-color-3: var(--orchid-color-orange-500);
+    --lumo-user-color-4: var(--orchid-color-yellow-400);
+    --lumo-user-color-5: var(--orchid-color-teal-700);
+    --lumo-user-color-6: var(--orchid-color-green-500);
 
     /* Border radius */
-    --lumo-border-radius-s: 0.25em; /* Checkbox, badge, date-picker year indicator, etc */
-    --lumo-border-radius-m: var(--lumo-border-radius, 0.25em); /* Button, text field, menu overlay, etc */
-    --lumo-border-radius-l: 0.5em; /* Dialog, notification, etc */
+    --lumo-border-radius-l: 0.5rem;
+    --lumo-border-radius-m: 0.25rem;
+    --lumo-border-radius-s: 0.25rem;
 
-    /* Shadow */
-    --lumo-box-shadow-xs: 0 1px 4px -1px var(--lumo-shade-50pct);
-    --lumo-box-shadow-s: 0 2px 4px -1px var(--lumo-shade-20pct), 0 3px 12px -1px var(--lumo-shade-30pct);
-    --lumo-box-shadow-m: 0 2px 6px -1px var(--lumo-shade-20pct), 0 8px 24px -4px var(--lumo-shade-40pct);
-    --lumo-box-shadow-l: 0 3px 18px -2px var(--lumo-shade-20pct), 0 12px 48px -6px var(--lumo-shade-40pct);
-    --lumo-box-shadow-xl: 0 4px 24px -3px var(--lumo-shade-20pct), 0 18px 64px -8px var(--lumo-shade-40pct);
+    /* Focus ring */
+    --vaadin-focus-ring-color: var(--lumo-primary-color);
+    --vaadin-focus-ring-width: 1px;
+
+    /* Shadows */
+    --lumo-box-shadow-xs: 0px 1px 2px 0px var(--lumo-shade-10pct, rgba(0, 0, 0, 0.10));
+    --lumo-box-shadow-s: 0px 2px 6px 0px var(--lumo-shade-10pct, rgba(0, 0, 0, 0.10));
+    --lumo-box-shadow-m: 0px 4px 6px -1px var(--lumo-shade-10pct, rgba(0, 0, 0, 0.10)), 0px 2px 4px -2px var(--lumo-shade-10pct, rgba(0, 0, 0, 0.10));
+    --lumo-box-shadow-l: 0px 10px 15px -3px var(--lumo-shade-10pct, rgba(0, 0, 0, 0.10)), 0px 4px 6px -4px var(--lumo-shade-10pct, rgba(0, 0, 0, 0.10));
+    --lumo-box-shadow-xl: 0px 20px 25px -5px var(--lumo-shade-10pct, rgba(0, 0, 0, 0.10)), 0px 8px 10px -6px var(--lumo-shade-10pct, rgba(0, 0, 0, 0.10));
 }
 
+html[theme="dark"] {
+    --lumo-base-color: var(--orchid-color-grey-700);
+
+    /* Text colors */
+    --lumo-heading-text-color: var(--orchid-color-white);
+    --lumo-body-text-color: var(--orchid-color-grey-100);
+    --lumo-secondary-text-color: var(--orchid-color-grey-300);
+    --lumo-tertiary-text-color: var(--orchid-color-grey-500);
+    --lumo-disabled-text-color: var(--orchid-color-grey-600);
+
+    /* Shades */
+    --lumo-contrast-5pct: var(--orchid-color-grey-700);
+    --lumo-contrast-10pct: var(--orchid-color-grey-600);
+    --lumo-contrast-20pct: var(--orchid-color-grey-500);
+    --lumo-contrast-30pct: var(--orchid-color-grey-400);
+    --lumo-contrast-40pct: var(--orchid-color-grey-300);
+    --lumo-contrast-50pct: var(--orchid-color-grey-200);
+    --lumo-contrast-60pct: var(--orchid-color-grey-100);
+    --lumo-contrast-70pct: var(--orchid-color-grey-100);
+    --lumo-contrast-80pct: var(--orchid-color-grey-050);
+    --lumo-contrast-90pct: var(--orchid-color-white);
+    --lumo-contrast: var(--orchid-color-white);
+
+    --lumo-shade-5pct: hsla(0 0%, 0%, 0.1);
+    --lumo-shade-10pct: hsla(0 0%, 0%, 0.15);
+    --lumo-shade-20pct: hsla(0 0%, 0%, 0.25);
+    --lumo-shade-30pct: hsla(0 0%, 0%, 0.35);
+    --lumo-shade-40pct: hsla(0 0%, 0%, 0.45);
+    --lumo-shade-50pct: hsla(0 0%, 0%, 0.55);
+    --lumo-shade-60pct: hsla(0 0%, 0%, 0.65);
+    --lumo-shade-70pct: hsla(0 0%, 0%, 0.75);
+    --lumo-shade-80pct: hsla(0 0%, 0%, 0.85);
+    --lumo-shade-90pct: hsla(0 0%, 0%, 0.95);
+    --lumo-shade: hsl(0 0%, 0%);
+
+    /* Semantic colors */
+    --lumo-primary-color: var(--orchid-color-red-600);
+    --lumo-primary-color-10pct: var(--orchid-color-red-800);
+    --lumo-primary-color-50pct: var(--orchid-color-red-700);
+    --lumo-primary-contrast-color: var(--orchid-color-white);
+    --lumo-primary-text-color: var(--orchid-color-red-200);
+
+    --lumo-success-color: var(--orchid-color-green-500);
+    --lumo-success-color-10pct: var(--orchid-color-green-800);
+    --lumo-success-color-50pct: var(--orchid-color-green-600);
+    --lumo-success-contrast-color: var(--orchid-color-white);
+    --lumo-success-text-color: var(--orchid-color-green-200);
+
+    --lumo-error-color: var(--orchid-color-red-400);
+    --lumo-error-color-10pct: var(--orchid-color-red-800);
+    --lumo-error-color-50pct: var(--orchid-color-red-700);
+    --lumo-error-contrast-color: var(--orchid-color-white);
+    --lumo-error-text-color: var(--orchid-color-red-200);
+
+    --lumo-warning-color: var(--orchid-color-yellow-300);
+    --lumo-warning-color-10pct: var(--orchid-color-yellow-700);
+    --lumo-warning-text-color: var(--orchid-color-yellow-300);
+    --lumo-warnng-contrast-color: var(--orchid-color-yellow-800);
+
+    /* User colors */
+    --lumo-user-color-0: var(--orchid-color-red-600);
+    --lumo-user-color-1: var(--orchid-color-purple-600);
+    --lumo-user-color-2: var(--orchid-color-teal-600);
+    --lumo-user-color-3: var(--orchid-color-orange-600);
+    --lumo-user-color-4: var(--orchid-color-yellow-500);
+    --lumo-user-color-5: var(--orchid-color-teal-800);
+    --lumo-user-color-6: var(--orchid-color-green-600);
+}
+
+/* Increase size variables on small viewports */
 @media screen and (max-width: 600px) {
     html {
         --lumo-size-xs: 2rem;

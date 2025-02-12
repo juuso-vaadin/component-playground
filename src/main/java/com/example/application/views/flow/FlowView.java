@@ -110,6 +110,8 @@ public class FlowView extends VerticalLayout {
         });
 
         HorizontalLayout viewHeader = new HorizontalLayout();
+        viewHeader.setPadding(false);
+        viewHeader.setSpacing(false);
         viewHeader.setWidthFull();
         viewHeader.setAlignItems(Alignment.BASELINE);
         H2 title = new H2("Flow components");

@@ -1,8 +1,14 @@
 html {
-    --vaadin-input-field-background: var(--lumo-base-color);
+    --vaadin-input-field-background: var(--orchid-color-surface-light);
     --vaadin-input-field-border-width: 1px;
-    --vaadin-input-field-border-color: var(--lumo-contrast-30pct);
-    --vaadin-input-field-label-color: var(--lumo-body-text-color);
+    --vaadin-input-field-border-color: var(--lumo-contrast-20pct);
+    --vaadin-input-field-label-color: var(--lumo-secondary-text-color);
+    --vaadin-input-field-label-font-weight: 400;
+    --vaadin-input-field-focused-label-color: var(--lumo-heading-text-color);
+}
+
+html[theme="dark"] {
+    --vaadin-input-field-background: var(--orchid-color-surface-dark);
 }
 
 [focused]::part(input-field) {

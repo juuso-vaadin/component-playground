@@ -3,7 +3,7 @@ html body {
 }
 
 html[theme~="dark"] body {
-    background-color: var(--lumo-shade-10pct);
+    background-color: var(--orchid-color-grey-800);
 }
 
 /* Main layout header */
@@ -43,7 +43,8 @@ header nav a.active {
 .components-view .card {
     background: var(--lumo-base-color);
     padding: var(--lumo-space-l);
-    box-shadow: var(--lumo-box-shadow-xs);
+    border: 1px solid var(--lumo-contrast-10pct);
+    border-radius: var(--lumo-border-radius-l);
 }
 
 .components-view vaadin-date-time-picker vaadin-date-picker {
